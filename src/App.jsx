@@ -1,53 +1,65 @@
-import HelloWorld from './HelloWorld';
-import React from 'react'
+import Plano from "./Plano";
 import "./App.css"
-import Perfil from "./Perfil";
-
+import React from 'react'
+import Button from "./Button"
 function App() {
-	
+    const planos = [
 
-	const lista_pessoas =[
-		{
-			nome: "01/06/2022 08:13",
-			idade: "NOTA A COMUNIDADE: Bloqueio do orçamento da Educação", 
-		},
+        {
+         link:"big-king.webp",
+          title: "Combo Big King",
+            price:"Um hamburger com duas carnes bovinas grelhadas de 57g, pão com gergelim, queijo...",
+            qnt_users: " Serve 1 pessoa",
+            qnt_projects:"R$ 41,90",
+        },
+        {
+           link:"cheddar-duplo.webp",
+          title: "Combo Cheddar Duplo",
+            price: "Um hambúrguer com duas carnes bovinas grelhadas de 57g,pão preto com gergilim...",
+            qnt_users: " Serve 1 pessoa",
+            qnt_projects:"R$ 41,90",
+            
+        },
+        {
+          link:"cheeseburger-duplo.webp",
+            title: "Combo Cheeseburger Duplo com Bacon",
+            price: "Um hambúrguer com duas carnes bovinas grelhadas de 57g, pão com gergelim, queijo...",
+            qnt_users: "  Serve 1 pessoa",
+            qnt_projects:" R$ 36,90",
+        },
+        {
+            link:"mega-stacker.webp",
+          title: "Combo Mega Stacker 2.0",
+            price: "Um hambúrguer com duas carnes bovinas grelhadas de 113g, pão com gergilim, queijo",
+            qnt_users: " Serve 1 pessoa",
+            qnt_projects:"R$ 51,90",
+        },
+       
+    ];
 
-		{
-			nome: "31/05/2022/ 12:35",
-			idade: "IFRO publica edital para cadastro de interesse de remoção",
-			
-		},
-		{
-			nome: "30/05/2022 09:54",
-			idade: "Parceria entre ifro e UAB ira ampliar a oferta de cursos de pós graduação e pedagogia",
-			
-		},
-		{
-			nome: "25/05/2022 15:10 ",
-			idade: "Matutenção do Sistema SUAP acontece nesta sexta-feira(27)",
-			
-		},
-		{
-			nome: "25/05/2022 07:44",
-			idade: "Pais e responsáveis por aluno podem ter acesso a informação estudantis pelo App IFRO Mobile",
-			
-		},
 
-	]
-
-	return (
-		<div className="container-principal">
-			<HelloWorld />
-			
-			{lista_pessoas.map ((pessoa) =>{
-				return <Perfil 
-
-							nome={pessoa.nome} 
-							idade={pessoa.idade}/>
-			})}
-
-		</div>
-	);
-}
-
-export default App;
+    return(
+      <div className="cardPai">
+        <img src="logo.svg" alt="" height={50} width={50} />
+        <header className="cabecalho">entregador </header>
+        <header>Restaurante e mercado</header>
+        <header>carreiras</header>
+        <header>iFood Card</header>
+        <h1 className="top">Destaques</h1>
+        {planos.map( (plano) =>{
+            return <Plano imagem={plano.link} titulo={plano.title}
+            infoBurguer={plano.info}
+            servePessoas={plano.serve}
+            preco={plano.price} />
+            
+  
+        })}
+      </div>
+    );
+  }
+  
+  export default App;
+  
+  button {
+	font-size: calc(10px + 2vmin);
+  }

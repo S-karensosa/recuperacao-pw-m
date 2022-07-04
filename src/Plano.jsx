@@ -1,15 +1,16 @@
+import React from 'react'
 import "./Plano.css";
-
-function Plano( {titulo, preco, usuarios, projetos, tipo}){
-    const cor_tip = "plano-container " + tipo;
-    return(
-        <div className={cor_tip}>
-            <h1 className="plano-titulo">titulo</h1>
-            <h2 className="plano-preço">preco</h2>
-            <p className="plano-info">usuarios</p>
-            <p className="plano-info">projetos</p>
-        </div>
-    );
+function Plano( {imagem,título,preco,usuarios,projetos} ){
+return(
+    <div className="plano-container">
+       <img src={imagem} alt="width={200}" />
+        <h2 className="plano-título">{título}</h2>
+        <p className="plano preço"> {preco}</p>
+        <h3 className="plano-info"> {usuarios}</h3>
+        <h3 className="plano info">{projetos}</h3>
+       
+    </div>
+);
 }
 
 export default Plano;

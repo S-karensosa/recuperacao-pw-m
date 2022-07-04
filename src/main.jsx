@@ -1,10 +1,16 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
-import './index.css'
+import "./Plano.css";
+function Plano( {imagem,título,preco,usuarios,projetos} ){
+return(
+    <div className="plano-container">
+       <img src={imagem} alt="width={200}" />
+        <h2 className="plano-título">{título}</h2>
+        <p className="plano preço"> {preco}</p>
+        <h3 className="plano-info"> {usuarios}</h3>
+        <h3 className="plano info">{projetos}</h3>
+       
+    </div>
+);
+}
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-)
+export default Plano;
