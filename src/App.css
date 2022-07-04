@@ -1,41 +1,5 @@
-.intens{
-  display: flex ;
-  flex-direction: row;
-
-  justify-content: space-between;
-  list-style-type: none;
-  font-size: 18px;
-  margin: 24px;
-  border-width: 0px;
-}
-.botao{
-  color: #FF000F;
-  border-radius: 5px;
-  padding: 5px;
-  border-right: 0;
-}
-.botao:hover, .intens button:hover{
-  background-color: #FFF;
-}
-.botao2{
-  background-color: #FF000F;
-  color: #FFF;
-  border-radius: 5px;
-  padding: 5px;
-  border-width: 0px;
-}
-.logo{
-  width: 150px;
-  height: 150px;
-}
-destaque.{
-  font-weight: bold;
-}
-.img{
-  width: 15px;
-  height: 150px;
-}
-.intens{
+.conteiner{
   display: flex;
   flex-wrap: wrap;
+  
 }

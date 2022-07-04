@@ -1,65 +1,58 @@
-import Plano from "./Plano";
+import Menu from "./Menu"
+import Card from "./Card";
 import "./App.css"
-import React from 'react'
-import Button from "./Button"
-function App() {
-    const planos = [
+function App(){
+	
+	const sites = [
+		{	
+			foto: "big-king.webp",
+			nome: "Combo Big King",
+			des: "Um Hambúrguer com duas carnes bovinas grelhadas de 57g. pão com gergelin, queijo...",
+			qtd: "Serve 1 pessoa",
+			preco: "R$ 41,90"
+		},
+		{	
+			foto: "cheddar-duplo.webp",
+			nome: "Combo Combo Cheddar Duplo",
+			des: "Um Hambúrguer com duas carnes bovinas grelhadas de 57g. pão preto com gergelin...",
+			qtd: "Serve 1 pessoa",
+			preco: "R$ 41,90"
+		},
+		{	
+			foto: "cheeseburger-duplo.webp",
+			nome: "Combo Cheeseburguer Duplo com Bacon",
+			des: "Um Hambúrguer com duas carnes bovinas grelhadas de 57g. pão com gergelin, queijo...",
+			qtd: "Serve 1 pessoa",
+			preco: "R$ 36,90"
+		},
+		{	
+			foto: "mega-stacker.webp",
+			nome: "Combo Mega Stacker 2.0",
+			des: "Um Hambúrguer com duas carnes bovinas grelhadas de 113g. pão com gergelin, queijo...",
+			qtd: "Serve 1 pessoa",
+			preco: "R$ 51,90"
+		},
+		
+	];
+	return(
+	  
+		<div className="conteiner">
 
-        {
-         link:"big-king.webp",
-          title: "Combo Big King",
-            price:"Um hamburger com duas carnes bovinas grelhadas de 57g, pão com gergelim, queijo...",
-            qnt_users: " Serve 1 pessoa",
-            qnt_projects:"R$ 41,90",
-        },
-        {
-           link:"cheddar-duplo.webp",
-          title: "Combo Cheddar Duplo",
-            price: "Um hambúrguer com duas carnes bovinas grelhadas de 57g,pão preto com gergilim...",
-            qnt_users: " Serve 1 pessoa",
-            qnt_projects:"R$ 41,90",
-            
-        },
-        {
-          link:"cheeseburger-duplo.webp",
-            title: "Combo Cheeseburger Duplo com Bacon",
-            price: "Um hambúrguer com duas carnes bovinas grelhadas de 57g, pão com gergelim, queijo...",
-            qnt_users: "  Serve 1 pessoa",
-            qnt_projects:" R$ 36,90",
-        },
-        {
-            link:"mega-stacker.webp",
-          title: "Combo Mega Stacker 2.0",
-            price: "Um hambúrguer com duas carnes bovinas grelhadas de 113g, pão com gergilim, queijo",
-            qnt_users: " Serve 1 pessoa",
-            qnt_projects:"R$ 51,90",
-        },
-       
-    ];
+			{
+				sites.map((site) => {
+					return (
+					<Card  foto={site.foto}
+							nome={site.nome}
+							des={site.des}
+							qtd={site.qtd}
+							preco={site.preco}
+						/>
+					)
+				})
+			}
+		</div>
+		
+	);
+}
 
-
-    return(
-      <div className="cardPai">
-        <img src="logo.svg" alt="" height={50} width={50} />
-        <header className="cabecalho">entregador </header>
-        <header>Restaurante e mercado</header>
-        <header>carreiras</header>
-        <header>iFood Card</header>
-        <h1 className="top">Destaques</h1>
-        {planos.map( (plano) =>{
-            return <Plano imagem={plano.link} titulo={plano.title}
-            infoBurguer={plano.info}
-            servePessoas={plano.serve}
-            preco={plano.price} />
-            
-  
-        })}
-      </div>
-    );
-  }
-  
-  export default App;
-  
-  button {
-	font-size: calc(10px + 2vmin);
-  }
+export default App;
